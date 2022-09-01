@@ -1,3 +1,2 @@
 #!/bin/bang
 chown school hello
-chgrp school hello
