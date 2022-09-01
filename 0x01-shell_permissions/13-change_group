@@ -1,2 +1,2 @@
 #!/bin/bang
-chgrp hello school
+chgrp holberton hello
