@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -c 3 /etc/passwd
+tail -c 3 iacta
