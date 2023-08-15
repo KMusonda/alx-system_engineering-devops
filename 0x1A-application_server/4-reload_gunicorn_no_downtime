@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Define the Gunicorn process name
+GUNICORN_PROCESS="2-hbnb:app"
+
+# Number of workers to gracefully restart
+NUM_WORKERS=3
+
+# Gracefully restart workers one by one
+for ((i=1; i<=${NUM_WORKERS}; i++)); do
+    echo "Gracefully restarting worker ${i}/${NUM_WORKERS}"
+    # Send HUP signal to the worker process to gracefully restart
+    pkill -HUP -f "${GUNICORN_PROCESS}"
+    sleep 5  # Give the worker some time to finish processing requests
+done
+
+echo "All workers gracefully restarted"
+
